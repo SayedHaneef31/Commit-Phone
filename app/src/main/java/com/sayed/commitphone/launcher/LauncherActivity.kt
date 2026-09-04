@@ -28,6 +28,11 @@ class LauncherActivity : ComponentActivity() {
                     Destination.Home -> HomeScreen(
                         onMenuClick = viewModel::openMenu,
                         showStatus = uiState.showStatus,
+                        focusedControl = uiState.focusedControl,
+                        lastKeypadInput = uiState.lastKeypadInput,
+                        onDPadDirection = viewModel::moveFocus,
+                        onDPadCenter = viewModel::activateFocusedControl,
+                        onKeypadInput = viewModel::onKeypadInput,
                     )
                     Destination.Menu -> MenuScreen(onBackClick = viewModel::returnHomeIfShowingMenu)
                 }
