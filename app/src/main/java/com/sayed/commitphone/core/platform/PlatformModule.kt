@@ -10,4 +10,7 @@ import dagger.hilt.components.SingletonComponent
 abstract class PlatformModule {
     @Binds
     abstract fun bindDeviceClock(implementation: SystemDeviceClock): DeviceClock
+
+    @Binds
+    abstract fun bindDeviceStatusProvider(implementation: SystemDeviceStatusProvider): DeviceStatusProvider
 }
